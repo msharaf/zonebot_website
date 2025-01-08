@@ -2,8 +2,20 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HP20F8PFQ1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HP20F8PFQ1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZoneBot helps remote teams manage time zones effortlessly. Convert times in Slack, auto-detect user time zones, and schedule global meetings with ease.">
+    <meta name="keywords" content="ZoneBot, time zone bot, Slack integration, time conversion, global scheduling, remote teams">
+    <meta name="author" content="ZoneBot Team">
     <title>ZoneBot</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -40,15 +52,14 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="https://slack.com/oauth/v2/authorize?client_id=1021445897763.7892667950918&scope=app_mentions:read,channels:history,chat:write,commands,users:read&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
-                </li>
+                <li><a href="https://slack.com/oauth/v2/authorize?client_id=1021445897763.7892667950918&scope=commands,team:read,users:read&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a></li>
 
             </ul>
         </nav>
         <div class="hero">
-            <h1>ZoneBot</h1>
-            <p>"Fed up with manually converting time zones? Use our Slack commands to handle time zone conversions automatically for you! </p>
-            <a href="https://slack.com/oauth/v2/authorize?client_id=1021445897763.7892667950918&scope=app_mentions:read,channels:history,chat:write,commands,users:read&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+            <h1 data-feature="time-conversion slack " >ZoneBot</h1>
+            <p>Fed up with manually converting time zones? Let ZoneBot's AI handle it for you! Use our Slack commands to automatically convert time zones and simplify scheduling like never before.</p>
+            <a href="https://slack.com/oauth/v2/authorize?client_id=1021445897763.7892667950918&scope=commands,team:read,users:read&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
     </header>
 
     <section id="features" class="features">
