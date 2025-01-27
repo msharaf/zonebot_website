@@ -199,3 +199,66 @@ a:hover {
     text-decoration: none;
     font-weight: bold;
 }
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .card h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  .card p {
+    margin: 10px 0;
+    color: #555;
+  }
+  .card .price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007BFF;
+    margin: 15px 0;
+  }
+  .card button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+  }
+  .card button:hover {
+    background-color: #0056b3;
+  }
+.email-button {
+padding: 10px 20px;
+background-color: #007BFF;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+transition: background-color 0.2s;
+}
+.emailbutton:hover {
+background-color: #0056b3;
+}
