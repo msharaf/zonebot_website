@@ -25,7 +25,8 @@ jobs:
       # Upload files to S3
       - name: Upload files to S3
         run: |
-          aws s3 cp ./* s3://zonebot-website/ --recursive
+          ls -la 
+          aws s3 sync . s3://zonebot-website/ --exclude ".github*" --exclude ".git*"
       
       # Trigger AWS Amplify redeploy
       - name: Trigger Amplify Redeploy
