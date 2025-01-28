@@ -25,14 +25,14 @@ jobs:
       # Upload files to S3
       - name: Upload files to S3
         run: |
-          ls -la 
-          aws s3 sync . s3://zonebot-website/ --exclude ".github*" --exclude ".git*"
+          ls -la
+          zip -r deployment.zip . -x ".git*" 
+          aws s3 cp deployment.zip s3://zonebot-website/
       
       # Trigger AWS Amplify redeploy
       - name: Trigger Amplify Redeploy
         run: |
-          aws amplify start-job \
-            --app-id app3757 \
+          aws amplify start-deployment \
+            --app-id d2ho4ti02h7xe2 \
             --branch-name staging \
-            --job-type RELEASE \
-            --job-parameters '{"source": "s3", "bucketName": "zonebot-website", "bucketPath": "./*"}'
+            --source-url s3://zonebot-website/deployment.zip
