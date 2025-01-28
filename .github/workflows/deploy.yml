@@ -1,0 +1,37 @@
+name: Deploy to S3 and Trigger Amplify Redeploy
+
+on:
+  push:
+    branches:
+      - main  # or any branch you want to trigger this on
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout code from the repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up AWS CLI
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+      
+      # Upload files to S3
+      - name: Upload files to S3
+        run: |
+          aws s3 cp ./* s3://zonebot-website/ --recursive
+      
+      # Trigger AWS Amplify redeploy
+      - name: Trigger Amplify Redeploy
+        run: |
+          aws amplify start-job \
+            --app-id app3757 \
+            --branch-name staging \
+            --job-type RELEASE \
+            --job-parameters '{"source": "s3", "bucketName": "zonebot-website", "bucketPath": "./*"}'
