@@ -10,15 +10,24 @@
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
         {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "url": "https://www.zonebot.org",
-          "name": "Zonebot",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.zonebot.org/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
+          "@context": "https://zonebot.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "HomePage",
+            "item": "https://zonebot.org"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pricing",
+            "item": "https://zonebot.org/pricing"
+          },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Terms of Service"
+            "item": "https://www.zonebot.org/pricing.html"
+          }]
         }
         </script>
 </head>
